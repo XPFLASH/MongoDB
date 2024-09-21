@@ -9,6 +9,8 @@
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 10px;
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 #logoDash {
@@ -30,7 +32,8 @@ img {
 ul{
     display: contents;
     list-style-type: none;
-    color: whitesmoke; 
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 #linav{
@@ -38,9 +41,13 @@ ul{
     margin: 10px 15px;
     display: flex;
     flex-direction: row;
+    align-content: center;
+    align-self: center;
     align-items: center;
     gap: 20px;
     padding: 12px 6px;
+    color: whitesmoke;
+    text-decoration: none;
     
 }
 
@@ -50,3 +57,9 @@ ul{
     border-radius: 10px;
     
 }
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
