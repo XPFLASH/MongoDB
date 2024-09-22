@@ -1,9 +1,12 @@
 import React from 'react'
 import '../styles/navbar.css'
-import { FaHome, FaList, FaPaperPlane, FaPenSquare, FaSign, FaSignInAlt, FaUsers } from "react-icons/fa";
+import { FaArrowAltCircleDown, FaArrowRight, FaHome, FaList, FaPaperPlane, FaPenSquare, FaSign, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+
+  const token = localStorage.getItem('token');
+
   return (
     <div id='divPrincipal'>
         <div id='logoDash'>
@@ -18,6 +21,7 @@ const NavBar = () => {
                 <Link to ="/consulta"><li id='linav'> <FaList/> Consultar Datos</li></Link>
                 <li id='linav'> <FaPaperPlane/>Contactanos</li>
                 <li id='linav'> <FaUsers/>Sobre nosotros</li>
+                {token && ( <Link to="/logout"> <li id='linav'> <FaSignOutAlt/> Cerrar Sesión</li></Link>)}
             </ul>
         </nav>
     </div>
