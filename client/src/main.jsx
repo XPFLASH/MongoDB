@@ -7,6 +7,8 @@ import Registro from './pages/registro';
 import Consulta from './pages/consulta';
 import Login from './pages/login';
 import Logout from './pages/logout.jsx';
+import About from './pages/about.jsx';
+import Contact from './pages/contact.jsx';
 import PrivateRoute from './utils/privateRoute.jsx';
 
 createRoot(document.getElementById('root')).render(
@@ -34,8 +36,10 @@ createRoot(document.getElementById('root')).render(
             </section>
           </div>
         )} />
-        <Route path="/registro" element={ <PrivateRoute><Registro /></PrivateRoute> }/>
+        <Route path="/registro" element={ <Registro />}/>
         <Route path="/consulta" element={ <PrivateRoute><Consulta /></PrivateRoute>}/>
+        <Route path="/about" element={ <PrivateRoute><About/></PrivateRoute>}/>
+        <Route path="/contact" element={ <PrivateRoute><Contact/></PrivateRoute>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>

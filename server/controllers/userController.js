@@ -2,7 +2,7 @@ import dbConnect from '../config/dbConnect.js';
 import User from '../models/User.js';
 
 export const createUser = async (req, res) => {
-  const { name, age, email, phone, country} = req.body;
+  const { name, age, email, password, phone, country} = req.body;
 
   try {
     
@@ -10,6 +10,7 @@ export const createUser = async (req, res) => {
       name,
       age,
       email,
+      password,
       phone,
       country
     });

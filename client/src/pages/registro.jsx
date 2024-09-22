@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import '../styles/registro.css';
-import { FaEnvelope, FaGlobeAmericas, FaPhoneAlt, FaSignature, FaSortNumericUpAlt} from "react-icons/fa";
+import { FaEnvelope, FaGlobeAmericas, FaLock, FaPhoneAlt, FaSignature, FaSortNumericUpAlt} from "react-icons/fa";
 
 
 const registro = () => {
 
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
+  const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [country, setCountry] = useState('')
@@ -24,6 +25,7 @@ const registro = () => {
         name,
         age,
         email,
+        password,
         phone,
         country,
       }),
@@ -40,8 +42,9 @@ const registro = () => {
 
   const resetCampos = () =>{
     setName("");
-    setAge(0);
+    setAge("");
     setEmail("");
+    setPassword("")
     setPhone("");
     setCountry("");
 
@@ -64,6 +67,7 @@ const registro = () => {
             onChange={(e)=> setName(e.target.value)} 
             required />
           </div>
+
           <div>
             <label htmlFor="edad" id='labelForm'><FaSortNumericUpAlt/> Edad:</label>
             <input 
@@ -74,6 +78,7 @@ const registro = () => {
             value={age}
             onChange={(e)=> setAge(e.target.value)}  />
           </div>
+
           <div>
             <label htmlFor="email" id='labelForm'> <FaEnvelope/> Correo:</label>
             <input 
@@ -85,6 +90,19 @@ const registro = () => {
             value={email}
             onChange={(e)=> setEmail(e.target.value)}  />
           </div>
+
+          <div>
+            <label htmlFor="password" id='labelForm'> <FaLock/> Contraseña:</label>
+            <input 
+            type="password" 
+            name="" 
+            id="password" 
+            placeholder='Escriba su contraseña...' 
+            required 
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}  />
+          </div>
+
           <div>
             <label htmlFor="phone" id='labelForm'><FaPhoneAlt/> Celular:</label>
             <input 
@@ -95,6 +113,7 @@ const registro = () => {
             value={phone}
             onChange={(e)=> setPhone(e.target.value)}  />
           </div>
+
           <div>
             <label htmlFor="country" id='labelForm'><FaGlobeAmericas/> Pais:</label>
             <input 
@@ -105,6 +124,7 @@ const registro = () => {
             value={country}
             onChange={(e)=> setCountry(e.target.value)}  />
           </div>  
+
           <div id='divBoton'>
             <button type='submit'>Enviar</button>
           </div>

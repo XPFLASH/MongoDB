@@ -5,6 +5,7 @@ const login = () => {
   
   
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('')
   
 
   const handleSubmit = async (e) => {
@@ -16,7 +17,7 @@ const login = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await res.json();
@@ -38,17 +39,6 @@ const login = () => {
       </section>
       <form id='formLogin' onSubmit={handleSubmit}>
 
-        {/* <div>
-          <label htmlFor="password" id='labelLogin'>Usuario:</label>
-          <input
-            type="text"
-            id="password"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-            required
-          />
-        </div> */}
-
         <div>
           <label htmlFor="email" id='labelLogin'>Correo:</label>
           <input
@@ -56,6 +46,17 @@ const login = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="password" id='labelLogin'>Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
